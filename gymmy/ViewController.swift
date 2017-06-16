@@ -37,7 +37,7 @@ class ViewController: UITableViewController {
         
         for (id, name: studioName) in studios {
             let studio = try doc.select("#\(id).schedule")
-            for day in try doc.select(".schedule-day-name") {
+            for day in try studio.select(".schedule-day-name") {
                 for event in try day.siblingElements().select(".single-event") {
                     classes.append(GymClass(
                         name: try event.select("h4").text(),
