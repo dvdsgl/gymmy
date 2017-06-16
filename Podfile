@@ -4,5 +4,8 @@
 target 'gymmy' do
   use_frameworks!
 
+  pod 'MobileCenter'
+  pod 'MobileCenter/MobileCenterDistribute'
+
   pod "SwiftSoup"
 end
