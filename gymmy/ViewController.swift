@@ -2,8 +2,7 @@ import UIKit
 import SwiftSoup
 
 struct GymClass {
-    let name: String
-    let description: String
+    let name, description, time, trainer, studio: String
 }
 
 class ViewController: UITableViewController {
@@ -21,11 +20,21 @@ class ViewController: UITableViewController {
         let doc = try SwiftSoup.parse(html)
         var classes = [GymClass]()
         
-        for studio in try doc.select(".schedule") {
-            for event in try studio.select(".event-description") {
+        let studios = [
+            (id: "cycle", name: "Studio Cycle"),
+            (id: "escape", name: "Studio Escape"),
+            (id: "energy", name: "Studio Energy")
+        ]
+        
+        for (id, name: studioName) in studios {
+            let studio = try doc.select("#\(id).schedule")
+            for event in try studio.select(".single-event") {
                 classes.append(GymClass(
-                    name: try event.select("h3").text(),
-                    description: try event.select(".event-description-content").text()
+                    name: try event.select("h4").text(),
+                    description: try event.select(".event-description-content").text(),
+                    time: try event.select(".event-time").text(),
+                    trainer: try event.select(".event-trainer").text(),
+                    studio: studioName
                 ))
             }
         }
