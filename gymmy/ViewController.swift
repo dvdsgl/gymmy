@@ -15,6 +15,8 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         classes = (try? getClasses()) ?? []
         
+        title = "\(classes.count) classes"
+        
         classesByDay.removeAll()
         for c in classes {
             var cs = classesByDay[c.day] ?? []
