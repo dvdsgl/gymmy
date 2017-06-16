@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             MSDistribute.self
         ])
         
+        application.applicationSupportsShakeToEdit = true
+        
         return true
     }
     

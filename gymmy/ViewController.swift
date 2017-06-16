@@ -10,6 +10,8 @@ class ViewController: UITableViewController {
     var classes = [GymClass]()
     
     var classesByDay = [String: [GymClass]]()
+
+    let testerUrl = URL(string: "https://install.mobile.azure.com/orgs/mobile-center/apps/gymmy")!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,6 +86,15 @@ class ViewController: UITableViewController {
         cell.detailTextLabel?.text = event.description
         
         return cell
+    }
+    
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        switch motion {
+        case .motionShake:
+            UIApplication.shared.open(testerUrl, options: [:])
+        default:
+            break
+        }
     }
 }
 
