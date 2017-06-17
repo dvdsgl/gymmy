@@ -1,17 +1,25 @@
 import UIKit
 
+public extension Sequence {
+    func groupBy<U : Hashable>(_ key: (Iterator.Element) -> U) -> [U:[Iterator.Element]] {
+        var dict: [U:[Iterator.Element]] = [:]
+        for el in self {
+            let key = key(el)
+            if case nil = dict[key]?.append(el) { dict[key] = [el] }
+        }
+        return dict
+    }
+}
+
 class ViewController: UITableViewController {
 
     var classes: [GymClass] = [] {
         didSet {
-            classesByDay.removeAll()
             let cal = Calendar.current
-            for c in classes {
+            classesByDay = classes.groupBy { c in
                 let day = cal.component(.weekday, from: c.start)
                 let dayName = cal.weekdaySymbols[day - 1]
-                var cs = classesByDay[dayName] ?? []
-                cs.append(c)
-                classesByDay[dayName] = cs
+                return dayName
             }
         }
     }
