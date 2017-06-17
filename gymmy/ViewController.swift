@@ -16,18 +16,23 @@ class ViewController: UITableViewController {
     var classes: [GymClass] = [] {
         didSet {
             classesByDay = classes.groupBy { Calendar.current.component(.weekday, from: $0.start) }
+            
+            let today = Calendar.current.component(.weekday, from: Date())
+            sectionToWeekday = (today ... today+6).map { $0 <= 7 ? $0 : $0 - 6 }
+            
+            title = "\(classes.count) classes"
         }
     }
     
     var classesByDay = [Int: [GymClass]]()
+    
+    var sectionToWeekday = [Int]()
 
     let testerUrl = URL(string: "https://install.mobile.azure.com/orgs/mobile-center/apps/gymmy")!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         classes = (try? FitnessSF.shared.getClasses()) ?? []
-        
-        title = "\(classes.count) classes"
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -35,20 +40,23 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let days = Calendar.current.weekdaySymbols
-        let day = days[section]
-        return day
+        let weekday = sectionToWeekday[section]
+        return Calendar.current.weekdaySymbols[weekday - 1]
+
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let classes = classesByDay[section + 1] ?? []
+        let weekday = sectionToWeekday[section]
+        let classes = classesByDay[weekday] ?? []
         return classes.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "event", for: indexPath)
-                
-        let event = classesByDay[indexPath.section + 1]![indexPath.row]
+        
+        let weekday = sectionToWeekday[indexPath.section]
+        let classes = classesByDay[weekday]!
+        let event = classes[indexPath.row]
         
         let f = DateFormatter()
         f.dateFormat = "h:mma"
