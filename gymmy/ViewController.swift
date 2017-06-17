@@ -15,16 +15,11 @@ class ViewController: UITableViewController {
 
     var classes: [GymClass] = [] {
         didSet {
-            let cal = Calendar.current
-            classesByDay = classes.groupBy { c in
-                let day = cal.component(.weekday, from: c.start)
-                let dayName = cal.weekdaySymbols[day - 1]
-                return dayName
-            }
+            classesByDay = classes.groupBy { Calendar.current.component(.weekday, from: $0.start) }
         }
     }
     
-    var classesByDay = [String: [GymClass]]()
+    var classesByDay = [Int: [GymClass]]()
 
     let testerUrl = URL(string: "https://install.mobile.azure.com/orgs/mobile-center/apps/gymmy")!
     
@@ -46,17 +41,14 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let day = Calendar.current.weekdaySymbols[section]
-        let classes = classesByDay[day] ?? []
+        let classes = classesByDay[section + 1] ?? []
         return classes.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "event", for: indexPath)
-        
-        let day = Calendar.current.weekdaySymbols[indexPath.section]
-        
-        let event = classesByDay[day]![indexPath.row]
+                
+        let event = classesByDay[indexPath.section + 1]![indexPath.row]
         
         let f = DateFormatter()
         f.dateFormat = "h:mma"
