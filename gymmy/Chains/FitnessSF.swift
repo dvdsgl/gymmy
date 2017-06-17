@@ -58,14 +58,11 @@ class FitnessSF {
                     
                     let day = try day.text()
                     let time = try event.select(".event-time").text()
-                    
                     guard let (start, end) = startAndEndDates(weekday: day, timeRange: time) else { continue }
                     
                     classes.append(GymClass(
                         name: try event.select("h4").text(),
                         description: try event.select(".event-description-content").text(),
-                        day: day,
-                        time: time,
                         trainer: try event.select(".event-trainer").text(),
                         studio: studioName,
                         start: start,

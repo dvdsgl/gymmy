@@ -1,7 +1,6 @@
 import Foundation
 
 struct GymClass {
-    let name, description, day, time, trainer, studio: String
-    
+    let name, description, trainer, studio: String
     let start, end: Date
 }

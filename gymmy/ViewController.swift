@@ -5,10 +5,13 @@ class ViewController: UITableViewController {
     var classes: [GymClass] = [] {
         didSet {
             classesByDay.removeAll()
+            let cal = Calendar.current
             for c in classes {
-                var cs = classesByDay[c.day] ?? []
+                let day = cal.component(.weekday, from: c.start)
+                let dayName = cal.weekdaySymbols[day - 1]
+                var cs = classesByDay[dayName] ?? []
                 cs.append(c)
-                classesByDay[c.day] = cs
+                classesByDay[dayName] = cs
             }
         }
     }
