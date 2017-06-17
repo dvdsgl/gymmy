@@ -18,7 +18,7 @@ class ViewController: UITableViewController {
             classesByDay = classes.groupBy { Calendar.current.component(.weekday, from: $0.start) }
             
             let today = Calendar.current.component(.weekday, from: Date())
-            sectionToWeekday = (today ... today+6).map { $0 <= 7 ? $0 : $0 - 6 }
+            sectionToWeekday = (today ... today+6).map { $0 <= 7 ? $0 : $0 - 7 }
             
             title = "\(classes.count) classes"
         }
