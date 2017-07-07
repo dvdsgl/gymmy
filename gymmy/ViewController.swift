@@ -26,6 +26,13 @@ class ViewController: UITableViewController {
     
     var classesByDay = [Int: [GymClass]]()
     
+    var todaysRemainingClasses: [GymClass] {
+        let now =  Date()
+        let today = Calendar.current.component(.weekday, from: now)
+        let todaysClasses = classesByDay[today]
+        return todaysClasses?.filter { now < $0.start } ?? []
+    }
+    
     var sectionToWeekday = [Int]()
 
     let testerUrl = URL(string: "https://install.mobile.azure.com/orgs/mobile-center/apps/gymmy")!
@@ -46,6 +53,10 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return todaysRemainingClasses.count
+        }
+        
         let weekday = sectionToWeekday[section]
         let classes = classesByDay[weekday] ?? []
         return classes.count
@@ -55,7 +66,7 @@ class ViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "event", for: indexPath)
         
         let weekday = sectionToWeekday[indexPath.section]
-        let classes = classesByDay[weekday]!
+        let classes = indexPath.section == 0 ? todaysRemainingClasses : classesByDay[weekday]!
         let event = classes[indexPath.row]
         
         let f = DateFormatter()
