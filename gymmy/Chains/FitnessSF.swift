@@ -23,7 +23,9 @@ class FitnessSF {
         let startComponents = cal.dateComponents([.weekday, .hour, .minute], from: start)
         let endComponents = cal.dateComponents([.weekday, .hour, .minute], from: end)
         
-        guard let startDate = cal.nextDate(after: Date(),
+        let startOfToday = cal.startOfDay(for: Date())
+        
+        guard let startDate = cal.nextDate(after: startOfToday,
                                            matching: startComponents,
                                            matchingPolicy: .nextTime,
                                            repeatedTimePolicy: .first,
