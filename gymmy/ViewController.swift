@@ -63,18 +63,13 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "event", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "event", for: indexPath) as! ClassTableViewCell
         
         let weekday = sectionToWeekday[indexPath.section]
         let classes = indexPath.section == 0 ? todaysRemainingClasses : classesByDay[weekday]!
         let event = classes[indexPath.row]
         
-        let f = DateFormatter()
-        f.dateFormat = "h:mma"
-        let date = f.string(from: event.start)
-        
-        cell.textLabel?.text = "\(event.name) \(date)"
-        cell.detailTextLabel?.text = event.description
+        cell.event = event
         
         return cell
     }
