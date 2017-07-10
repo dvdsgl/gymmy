@@ -1,4 +1,5 @@
 import UIKit
+import Foundation
 
 public extension Sequence {
     func groupBy<U : Hashable>(_ key: (Iterator.Element) -> U) -> [U:[Iterator.Element]] {
@@ -12,15 +13,29 @@ public extension Sequence {
 }
 
 class ViewController: UITableViewController {
-
     var classes: [GymClass] = [] {
         didSet {
-            classesByDay = classes.groupBy { Calendar.current.component(.weekday, from: $0.start) }
-            
-            let today = Calendar.current.component(.weekday, from: Date())
-            sectionToWeekday = (today ... today+6).map { $0 <= 7 ? $0 : $0 - 7 }
-            
-            title = "\(classes.count) classes"
+           update()
+        }
+    }
+    
+    func update() {
+        let studio = studioFilter ?? "All Studios"
+        title = "\(filteredClasses.count) classes • \(studio)"
+        
+        let today = Calendar.current.component(.weekday, from: Date())
+        sectionToWeekday = (today ... today+6).map { $0 <= 7 ? $0 : $0 - 7 }
+        
+        classesByDay = filteredClasses.groupBy { Calendar.current.component(.weekday, from: $0.start) }
+        
+        tableView.reloadData()
+    }
+    
+    private var filteredClasses: [GymClass] {
+        if let studio = studioFilter {
+            return classes.filter { $0.studio == studio }
+        } else {
+            return classes
         }
     }
     
@@ -72,6 +87,34 @@ class ViewController: UITableViewController {
         cell.event = event
         
         return cell
+    }
+    
+    var studioFilter: String? {
+        didSet {
+            update()
+        }
+    }
+    
+    @IBAction func filter(_ sender: Any) {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let studios = classes.groupBy { $0.studio }.values.map { $0.first!.studio }
+        for studio in studios {
+            let action = UIAlertAction(
+                title: studio,
+                style: .default,
+                handler: { _ in self.studioFilter = studio }
+            )
+            alert.addAction(action)
+        }
+        
+        alert.addAction(UIAlertAction(
+            title: "All Studios",
+            style: .cancel,
+            handler: { _ in self.studioFilter = nil }
+        ))
+        
+        present(alert, animated: true)
     }
     
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {

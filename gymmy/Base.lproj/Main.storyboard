@@ -106,7 +106,13 @@
                             <outlet property="delegate" destination="hhS-6l-Y0m" id="050-Lt-Tet"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="XzN-e1-tyi"/>
+                    <navigationItem key="navigationItem" id="XzN-e1-tyi">
+                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="ruv-kl-RMh">
+                            <connections>
+                                <action selector="filter:" destination="hhS-6l-Y0m" id="crk-jd-AYy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vJi-nT-zXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
