@@ -12,6 +12,18 @@ public extension Sequence {
     }
 }
 
+class Persistence {
+    static let defaults = UserDefaults.standard
+    static var studioFilter: String? {
+        get {
+            return defaults.string(forKey: "studioFilter")
+        }
+        set(newValue) {
+            defaults.set(newValue, forKey: "studioFilter")
+        }
+    }
+}
+
 class ViewController: UITableViewController {
     var classes: [GymClass] = [] {
         didSet {
@@ -54,7 +66,11 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         classes = (try? FitnessSF.shared.getClasses()) ?? []
+        studioFilter = Persistence.studioFilter
+        
+        update()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -91,6 +107,7 @@ class ViewController: UITableViewController {
     
     var studioFilter: String? {
         didSet {
+            Persistence.studioFilter = studioFilter
             update()
         }
     }
