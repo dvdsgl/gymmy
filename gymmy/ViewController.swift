@@ -78,6 +78,10 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Today"
+        }
+        
         let weekday = sectionToWeekday[section]
         return Calendar.current.weekdaySymbols[weekday - 1]
 
