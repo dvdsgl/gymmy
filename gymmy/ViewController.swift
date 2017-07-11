@@ -33,7 +33,7 @@ class ViewController: UITableViewController {
     
     func update() {
         let studio = studioFilter ?? "All Studios"
-        title = "\(filteredClasses.count) classes • \(studio)"
+        title = "Fitness SF • \(studio)"
         
         let today = Calendar.current.component(.weekday, from: Date())
         sectionToWeekday = (today ... today+6).map { $0 <= 7 ? $0 : $0 - 7 }
