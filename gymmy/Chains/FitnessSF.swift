@@ -42,8 +42,7 @@ class FitnessSF {
     }
     
     func getClasses() throws -> [GymClass] {
-        let url = URL(string: "https://fitnesssf.com/events/mid-market")!
-        let html = try String(contentsOf: url)
+        let html = Persistence.cachedOrDownload(url: "https://fitnesssf.com/events/mid-market")!
         let doc = try SwiftSoup.parse(html)
         var classes = [GymClass]()
         
