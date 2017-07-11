@@ -31,6 +31,9 @@ class ClassTableViewCell: UITableViewCell {
             timeLabel.text = f.string(from: event.start).lowercased()
             
             icon.backgroundColor = studioColor[event.studio] ?? UIColor.lightGray
+            if event.hasAlreadyStarted {
+                icon.backgroundColor = icon.backgroundColor?.withAlphaComponent(0.5)
+            }
         }
     }
     override func awakeFromNib() {

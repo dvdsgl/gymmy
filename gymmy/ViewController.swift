@@ -12,6 +12,13 @@ public extension Sequence {
     }
 }
 
+extension GymClass {
+    var hasAlreadyStarted: Bool {
+        return Calendar.current.isDateInToday(start)
+            && start < Date()
+    }
+}
+
 class ViewController: UITableViewController {
     var classes: [GymClass] = [] {
         didSet {
@@ -42,10 +49,10 @@ class ViewController: UITableViewController {
     var classesByDay = [Int: [GymClass]]()
     
     var todaysRemainingClasses: [GymClass] {
-        let now =  Date()
-        let today = Calendar.current.component(.weekday, from: now)
+        let expires =  Date().addingTimeInterval(60 * 90) // Keep classes in list for 90 minutes after they end
+        let today = Calendar.current.component(.weekday, from: Date())
         let todaysClasses = classesByDay[today]
-        return todaysClasses?.filter { now < $0.start } ?? []
+        return todaysClasses?.filter { expires < $0.end } ?? []
     }
     
     var sectionToWeekday = [Int]()
