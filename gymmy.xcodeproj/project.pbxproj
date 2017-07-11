@@ -16,6 +16,7 @@
 		63598CFD1EF0C12A00A090B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63598CFB1EF0C12A00A090B3 /* LaunchScreen.storyboard */; };
 		63C337E41EF4E72B006EC6C0 /* FitnessSF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C337E31EF4E72B006EC6C0 /* FitnessSF.swift */; };
 		63C337E71EF4E7D3006EC6C0 /* GymClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C337E61EF4E7D3006EC6C0 /* GymClass.swift */; };
+		63CA4AB31F14508D00D6D9D9 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA4AB21F14508D00D6D9D9 /* Persistence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		63598CFE1EF0C12A00A090B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63C337E31EF4E72B006EC6C0 /* FitnessSF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FitnessSF.swift; path = Chains/FitnessSF.swift; sourceTree = "<group>"; };
 		63C337E61EF4E7D3006EC6C0 /* GymClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymClass.swift; sourceTree = "<group>"; };
+		63CA4AB21F14508D00D6D9D9 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		6712E36E2141902296D29B51 /* Pods_gymmy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gymmy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F43D7972DA7D9A92ADEDCA2 /* Pods-gymmy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gymmy.release.xcconfig"; path = "Pods/Target Support Files/Pods-gymmy/Pods-gymmy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,6 +81,7 @@
 				63C337E51EF4E734006EC6C0 /* Chains */,
 				63598CF21EF0C12A00A090B3 /* AppDelegate.swift */,
 				63598CF41EF0C12A00A090B3 /* ViewController.swift */,
+				63CA4AB21F14508D00D6D9D9 /* Persistence.swift */,
 				63598CF61EF0C12A00A090B3 /* Main.storyboard */,
 				63598CF91EF0C12A00A090B3 /* Assets.xcassets */,
 				63598CFB1EF0C12A00A090B3 /* LaunchScreen.storyboard */,
@@ -232,6 +235,7 @@
 				63C337E71EF4E7D3006EC6C0 /* GymClass.swift in Sources */,
 				63598CF51EF0C12A00A090B3 /* ViewController.swift in Sources */,
 				63C337E41EF4E72B006EC6C0 /* FitnessSF.swift in Sources */,
+				63CA4AB31F14508D00D6D9D9 /* Persistence.swift in Sources */,
 				634814841F14378000862E87 /* ClassTableViewCell.swift in Sources */,
 				63598CF31EF0C12A00A090B3 /* AppDelegate.swift in Sources */,
 			);
