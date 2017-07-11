@@ -32,7 +32,12 @@ class ClassTableViewCell: UITableViewCell {
             
             icon.backgroundColor = studioColor[event.studio] ?? UIColor.lightGray
             if event.hasAlreadyStarted {
-                icon.backgroundColor = icon.backgroundColor?.withAlphaComponent(0.5)
+                let l = icon.layer
+                l.borderWidth = 2
+                l.borderColor = icon.backgroundColor?.cgColor
+                icon.backgroundColor = .clear
+            } else {
+                icon.layer.borderWidth = 0
             }
         }
     }
