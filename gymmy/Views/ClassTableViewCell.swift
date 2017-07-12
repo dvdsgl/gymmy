@@ -41,15 +41,9 @@ class ClassTableViewCell: UITableViewCell {
             f.dateFormat = "h:mma"
             timeLabel.text = f.string(from: event.start).lowercased()
             
-            icon.backgroundColor = studioDetails[event.studio]?.color ?? UIColor.lightGray
-            if event.hasAlreadyStarted {
-                let l = icon.layer
-                l.borderWidth = 2
-                l.borderColor = icon.backgroundColor?.cgColor
-                icon.backgroundColor = .clear
-            } else {
-                icon.layer.borderWidth = 0
-            }
+            let preferredColor = studioDetails[event.studio]?.color ?? UIColor.darkGray
+            let accentColor = event.hasAlreadyStarted ? UIColor.lightGray : preferredColor
+            icon.backgroundColor = accentColor
             
             let symbol = studioDetails[event.studio]?.icon ?? .ionicons(.help)
             icon.setIcon(icon: symbol, textColor: .white, backgroundColor: .clear, size: CGSize(width: 34, height: 34))
