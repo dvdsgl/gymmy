@@ -71,13 +71,15 @@ class ClassListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
+        switch section {
+        case 0:
             return "Today"
+        case 1:
+            return "Tomorrow"
+        case let n:
+            let weekday = sectionToWeekday[section]
+            return Calendar.current.weekdaySymbols[weekday - 1]
         }
-        
-        let weekday = sectionToWeekday[section]
-        return Calendar.current.weekdaySymbols[weekday - 1]
-
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
