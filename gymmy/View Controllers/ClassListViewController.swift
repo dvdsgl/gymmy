@@ -2,7 +2,7 @@ import UIKit
 import Foundation
 
 public extension Sequence {
-    func groupBy<U : Hashable>(_ key: (Iterator.Element) -> U) -> [U:[Iterator.Element]] {
+    func groupBy<U>(_ key: (Iterator.Element) -> U) -> [U: [Iterator.Element]] {
         var dict: [U:[Iterator.Element]] = [:]
         for el in self {
             let key = key(el)
@@ -13,6 +13,8 @@ public extension Sequence {
 }
 
 class ClassListViewController: UITableViewController {
+    @IBOutlet weak var filterButton: UIBarButtonItem!
+    
     var classes: [GymClass] = [] {
         didSet {
            update()
@@ -60,6 +62,8 @@ class ClassListViewController: UITableViewController {
         backItem.title = "  "
         navigationItem.backBarButtonItem = backItem
         
+        filterButton.setIcon(icon: .ionicons(.androidFunnel), iconSize: 25)
+        
         classes = (try? FitnessSF.shared.getClasses()) ?? []
         studioFilter = Persistence.studioFilter
         
@@ -76,7 +80,7 @@ class ClassListViewController: UITableViewController {
             return "Today"
         case 1:
             return "Tomorrow"
-        case let n:
+        default:
             let weekday = sectionToWeekday[section]
             return Calendar.current.weekdaySymbols[weekday - 1]
         }
@@ -143,7 +147,6 @@ class ClassListViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         switch segue.destination {
         case let detail as ClassDetailViewController:
             guard let selection = tableView.indexPathForSelectedRow else { return }

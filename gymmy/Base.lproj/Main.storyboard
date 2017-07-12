@@ -51,50 +51,48 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0G-cN-IYw" userLabel="icon">
-                                            <rect key="frame" x="18" y="15" width="40" height="40"/>
-                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Studio Escape" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJa-2H-EAn" userLabel="Studio">
+                                            <rect key="frame" x="58" y="43" width="229" height="18"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Precision Vinyasa Yoga" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWY-lk-iUB" userLabel="Title">
+                                            <rect key="frame" x="58" y="18" width="229" height="21"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BSS-rR-OQH">
+                                            <rect key="frame" x="8" y="15" width="40" height="40"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="40" id="4Di-bs-9Wa"/>
-                                                <constraint firstAttribute="height" constant="40" id="ceZ-3z-tC7"/>
+                                                <constraint firstAttribute="width" constant="40" id="R1b-Xr-efB"/>
+                                                <constraint firstAttribute="height" constant="40" id="ihk-iN-H9X"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                     <integer key="value" value="20"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
-                                        </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Studio Escape" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJa-2H-EAn" userLabel="Studio">
-                                            <rect key="frame" x="68" y="43" width="219" height="18"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Precision Vinyasa Yoga" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWY-lk-iUB" userLabel="Title">
-                                            <rect key="frame" x="68" y="18" width="219" height="21"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="BSS-rR-OQH" firstAttribute="leading" secondItem="bAD-Qw-pgw" secondAttribute="leadingMargin" id="0K5-Ti-Twb"/>
                                         <constraint firstItem="AJa-2H-EAn" firstAttribute="top" secondItem="sWY-lk-iUB" secondAttribute="bottom" constant="4" id="0iZ-Z9-UYr"/>
-                                        <constraint firstItem="sWY-lk-iUB" firstAttribute="leading" secondItem="x0G-cN-IYw" secondAttribute="trailing" constant="14" id="4zp-au-l5J"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="sWY-lk-iUB" secondAttribute="trailing" constant="10" id="8Em-Ae-ygs"/>
                                         <constraint firstItem="O0x-22-cF0" firstAttribute="top" secondItem="bAD-Qw-pgw" secondAttribute="topMargin" constant="10" id="Kds-96-bUe"/>
                                         <constraint firstItem="AJa-2H-EAn" firstAttribute="leading" secondItem="sWY-lk-iUB" secondAttribute="leading" id="Lnm-nZ-1Ki"/>
-                                        <constraint firstItem="sWY-lk-iUB" firstAttribute="leading" secondItem="x0G-cN-IYw" secondAttribute="trailing" constant="10" id="Mg4-Ao-6p8"/>
-                                        <constraint firstItem="x0G-cN-IYw" firstAttribute="leading" secondItem="bAD-Qw-pgw" secondAttribute="leadingMargin" constant="10" id="Q5N-pp-XA7"/>
+                                        <constraint firstItem="BSS-rR-OQH" firstAttribute="centerY" secondItem="bAD-Qw-pgw" secondAttribute="centerY" id="MhC-7s-aSL"/>
                                         <constraint firstItem="sWY-lk-iUB" firstAttribute="top" secondItem="bAD-Qw-pgw" secondAttribute="topMargin" constant="10" id="QQb-e9-JuP"/>
-                                        <constraint firstItem="x0G-cN-IYw" firstAttribute="centerY" secondItem="bAD-Qw-pgw" secondAttribute="centerY" id="VP3-IN-sGf"/>
                                         <constraint firstItem="sWY-lk-iUB" firstAttribute="top" secondItem="bAD-Qw-pgw" secondAttribute="topMargin" constant="10" id="bzq-Wb-QRU"/>
                                         <constraint firstItem="O0x-22-cF0" firstAttribute="leading" secondItem="sWY-lk-iUB" secondAttribute="trailing" constant="10" id="fyO-ln-1o1"/>
                                         <constraint firstItem="O0x-22-cF0" firstAttribute="trailing" secondItem="bAD-Qw-pgw" secondAttribute="trailingMargin" constant="-10" id="g4c-lD-UzG"/>
+                                        <constraint firstItem="sWY-lk-iUB" firstAttribute="leading" secondItem="BSS-rR-OQH" secondAttribute="trailing" constant="10" id="uAF-Dl-IUI"/>
                                         <constraint firstItem="AJa-2H-EAn" firstAttribute="width" secondItem="sWY-lk-iUB" secondAttribute="width" id="uXT-Bg-6IY"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="icon" destination="x0G-cN-IYw" id="oOb-mV-Bfd"/>
+                                    <outlet property="icon" destination="BSS-rR-OQH" id="PkY-hl-LYu"/>
                                     <outlet property="studioLabel" destination="AJa-2H-EAn" id="oVw-cJ-bFo"/>
                                     <outlet property="timeLabel" destination="O0x-22-cF0" id="9mt-84-skd"/>
                                     <outlet property="titleLabel" destination="sWY-lk-iUB" id="Jcn-vn-yzZ"/>
@@ -108,12 +106,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="XzN-e1-tyi">
-                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="ruv-kl-RMh">
+                        <barButtonItem key="rightBarButtonItem" title="Filter" id="ruv-kl-RMh">
                             <connections>
                                 <action selector="filter:" destination="hhS-6l-Y0m" id="crk-jd-AYy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="filterButton" destination="ruv-kl-RMh" id="KB2-cM-0hU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vJi-nT-zXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
