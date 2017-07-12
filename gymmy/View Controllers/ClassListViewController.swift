@@ -44,7 +44,7 @@ class ClassListViewController: UITableViewController {
     var classesByDay = [Int: [GymClass]]()
     
     var todaysRemainingClasses: [GymClass] {
-        let expires =  Date().addingTimeInterval(60 * 90) // Keep classes in list for 90 minutes after they end
+        let expires =  Date().addingTimeInterval(-60 * 30) // Keep classes in list for 30 minutes after they end
         let today = Calendar.current.component(.weekday, from: Date())
         let todaysClasses = classesByDay[today]
         return todaysClasses?.filter { expires < $0.end } ?? []
