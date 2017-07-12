@@ -12,14 +12,7 @@ public extension Sequence {
     }
 }
 
-extension GymClass {
-    var hasAlreadyStarted: Bool {
-        return Calendar.current.isDateInToday(start)
-            && start < Date()
-    }
-}
-
-class ViewController: UITableViewController {
+class ClassListViewController: UITableViewController {
     var classes: [GymClass] = [] {
         didSet {
            update()
@@ -61,6 +54,11 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set back button title to '  ', otherwise the title is long
+        let backItem = UIBarButtonItem()
+        backItem.title = "  "
+        navigationItem.backBarButtonItem = backItem
         
         classes = (try? FitnessSF.shared.getClasses()) ?? []
         studioFilter = Persistence.studioFilter
@@ -137,6 +135,25 @@ class ViewController: UITableViewController {
         switch motion {
         case .motionShake:
             UIApplication.shared.open(testerUrl, options: [:])
+        default:
+            break
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        switch segue.destination {
+        case let detail as ClassDetailViewController:
+            guard let selection = tableView.indexPathForSelectedRow else { return }
+            
+            switch selection.section {
+            case 0:
+                detail.gymClass = todaysRemainingClasses[selection.row]
+            default:
+                let weekday = sectionToWeekday[selection.section]
+                let classes = classesByDay[weekday]!
+                detail.gymClass = classes[selection.row]
+            }
         default:
             break
         }

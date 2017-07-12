@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="-666" y="188"/>
         </scene>
-        <!--View Controller-->
+        <!--Class List View Controller-->
         <scene sceneID="MNd-xg-ubK">
             <objects>
-                <tableViewController id="hhS-6l-Y0m" customClass="ViewController" customModule="gymmy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="hhS-6l-Y0m" customClass="ClassListViewController" customModule="gymmy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="T5J-Lr-gP1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,6 +98,7 @@
                                     <outlet property="studioLabel" destination="AJa-2H-EAn" id="oVw-cJ-bFo"/>
                                     <outlet property="timeLabel" destination="O0x-22-cF0" id="9mt-84-skd"/>
                                     <outlet property="titleLabel" destination="sWY-lk-iUB" id="Jcn-vn-yzZ"/>
+                                    <segue destination="LUh-dK-xWp" kind="show" id="I3B-4U-LD8"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -117,6 +118,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vJi-nT-zXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="187.55622188905548"/>
+        </scene>
+        <!--Class Detail View Controller-->
+        <scene sceneID="r38-Pe-Eq0">
+            <objects>
+                <viewController id="LUh-dK-xWp" customClass="ClassDetailViewController" customModule="gymmy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="t4d-sk-LjR"/>
+                        <viewControllerLayoutGuide type="bottom" id="2qH-LM-kiq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sXS-wt-MY1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vinyasa Flow Power Hour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7XX-1g-Yp8">
+                                <rect key="frame" x="16" y="84" width="343" height="34"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MkQ-Fd-Hla">
+                                <rect key="frame" x="16" y="138" width="343" height="152.5"/>
+                                <string key="text">Vinyasa yoga classes focus on creating fluid transitional moves between postures. Alignment and form are never sacrificed in the processes of flexibility development, and asana progressions,
+
+All levels welcome.</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MkQ-Fd-Hla" firstAttribute="top" secondItem="7XX-1g-Yp8" secondAttribute="bottom" constant="20" id="1Jy-tO-Vcw"/>
+                            <constraint firstItem="7XX-1g-Yp8" firstAttribute="trailing" secondItem="sXS-wt-MY1" secondAttribute="trailingMargin" id="4zE-cC-Y20"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MkQ-Fd-Hla" secondAttribute="trailing" id="Li2-ar-9Or"/>
+                            <constraint firstItem="7XX-1g-Yp8" firstAttribute="top" secondItem="t4d-sk-LjR" secondAttribute="bottom" constant="20" id="m9x-0L-1En"/>
+                            <constraint firstItem="7XX-1g-Yp8" firstAttribute="leading" secondItem="sXS-wt-MY1" secondAttribute="leadingMargin" id="yEf-Dj-Jje"/>
+                            <constraint firstItem="MkQ-Fd-Hla" firstAttribute="leading" secondItem="sXS-wt-MY1" secondAttribute="leadingMargin" id="znH-sA-F17"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="MkQ-Fd-Hla" id="fBm-m0-czO"/>
+                        <outlet property="titleLabel" destination="7XX-1g-Yp8" id="vbB-iE-9L3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8fC-id-HxV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="901.60000000000002" y="187.55622188905548"/>
         </scene>
     </scenes>
 </document>
