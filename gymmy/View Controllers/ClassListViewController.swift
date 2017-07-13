@@ -67,7 +67,29 @@ class ClassListViewController: UITableViewController {
         classes = (try? FitnessSF.shared.getClasses()) ?? []
         studioFilter = Persistence.studioFilter
         
+        if #available(iOS 10.0, *) {
+            let refreshControl = UIRefreshControl()
+            refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+            refreshControl.addTarget(self,
+                                     action: #selector(refreshOptions(sender:)),
+                                     for: .valueChanged)
+            tableView.refreshControl = refreshControl
+        }
+        
         update()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        update()
+    }
+    
+    @objc private func refreshOptions(sender: UIRefreshControl) {
+        // Perform actions to refresh the content
+        // ...
+        // and then dismiss the control
+        classes = (try? FitnessSF.shared.getClasses(latest: true)) ?? []
+        update()
+        sender.endRefreshing()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

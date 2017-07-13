@@ -41,8 +41,11 @@ class FitnessSF {
         return (startDate, endDate)
     }
     
-    func getClasses() throws -> [GymClass] {
-        let html = Persistence.cachedOrDownload(url: "https://fitnesssf.com/events/mid-market")!
+    func getClasses(latest: Bool = false) throws -> [GymClass] {
+        let expires = latest ? 0 : 60 * 60 * 24
+        let url = "https://fitnesssf.com/events/mid-market"
+        let html = Persistence.cachedOrDownload(url: url, expireAfter: Double(expires))!
+        
         let doc = try SwiftSoup.parse(html)
         var classes = [GymClass]()
         
