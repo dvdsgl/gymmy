@@ -65,8 +65,6 @@ class ClassListViewController: UITableViewController {
         navigationItem.backBarButtonItem = backItem
         
         filterButton.setIcon(icon: .ionicons(.androidFunnel), iconSize: 25)
-        
-        classes = (try? FitnessSF.shared.getClasses()) ?? []
         studioFilter = Persistence.studioFilter
         
         let refreshControl = UIRefreshControl()
@@ -75,16 +73,21 @@ class ClassListViewController: UITableViewController {
                                  action: #selector(refreshOptions(sender:)),
                                  for: .valueChanged)
         tableView.refreshControl = refreshControl
-        
-        update()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        update()
+        refreshAsync {
+        }
     }
     
     @objc private func refreshOptions(sender: UIRefreshControl) {
         MSAnalytics.trackEvent("pull to refresh")
+        refreshAsync {
+            sender.endRefreshing()
+        }
+    }
+    
+    func refreshAsync(completed: @escaping () -> Void) {
         DispatchQueue.global(qos: .background).async {
             do {
                 self.classes = try FitnessSF.shared.getClasses(latest: true)
@@ -93,12 +96,15 @@ class ClassListViewController: UITableViewController {
             }
             DispatchQueue.main.async {
                 self.update()
-                sender.endRefreshing()
+                completed()
             }
         }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
+        if classesByDay.isEmpty {
+            return 0;
+        }
         return Calendar.current.weekdaySymbols.count
     }
     
