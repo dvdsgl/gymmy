@@ -1,6 +1,8 @@
 import UIKit
 import Foundation
 
+import AppCenterAnalytics
+
 public extension Sequence {
     func groupBy<U>(_ key: (Iterator.Element) -> U) -> [U: [Iterator.Element]] {
         var dict: [U:[Iterator.Element]] = [:]
@@ -86,7 +88,11 @@ class ClassListViewController: UITableViewController {
         // ...
         // and then dismiss the control
         DispatchQueue.global(qos: .background).async {
-            self.classes = (try? FitnessSF.shared.getClasses(latest: true)) ?? []
+            do {
+                self.classes = try FitnessSF.shared.getClasses(latest: true)
+            } catch _ {
+                MSAnalytics.trackEvent("getClasses failed")
+            }
             DispatchQueue.main.async {
                 self.update()
                 sender.endRefreshing()
