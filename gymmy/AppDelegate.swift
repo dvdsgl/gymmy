@@ -1,9 +1,9 @@
 import UIKit
 
-import MobileCenter
-import MobileCenterAnalytics
-import MobileCenterCrashes
-import MobileCenterDistribute
+import AppCenter
+import AppCenterAnalytics
+import AppCenterCrashes
+import AppCenterDistribute
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -12,7 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        MSMobileCenter.start("e6ffcad6-61cf-4a1f-970e-7ed173493396", withServices:[
+        MSAppCenter.start("e6ffcad6-61cf-4a1f-970e-7ed173493396", withServices:[
             MSAnalytics.self,
             MSCrashes.self,
             MSDistribute.self

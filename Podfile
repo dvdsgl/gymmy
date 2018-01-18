@@ -4,8 +4,8 @@
 target 'gymmy' do
   use_frameworks!
 
-  pod 'MobileCenter'
-  pod 'MobileCenter/MobileCenterDistribute'
+  pod 'AppCenter'
+  pod 'AppCenter/Distribute'
 
   pod "SwiftSoup"
   pod 'SwiftIcons', '~> 2.0.1'

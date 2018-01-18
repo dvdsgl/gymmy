@@ -1,28 +1,28 @@
 PODS:
-  - MobileCenter (0.9.0):
-    - MobileCenter/MobileCenterAnalytics (= 0.9.0)
-    - MobileCenter/MobileCenterCrashes (= 0.9.0)
-  - MobileCenter/MobileCenter (0.9.0)
-  - MobileCenter/MobileCenterAnalytics (0.9.0):
-    - MobileCenter/MobileCenter
-  - MobileCenter/MobileCenterCrashes (0.9.0):
-    - MobileCenter/MobileCenter
-  - MobileCenter/MobileCenterDistribute (0.9.0):
-    - MobileCenter/MobileCenter
+  - AppCenter (1.2.0):
+    - AppCenter/Analytics (= 1.2.0)
+    - AppCenter/Crashes (= 1.2.0)
+  - AppCenter/Analytics (1.2.0):
+    - AppCenter/Core
+  - AppCenter/Core (1.2.0)
+  - AppCenter/Crashes (1.2.0):
+    - AppCenter/Core
+  - AppCenter/Distribute (1.2.0):
+    - AppCenter/Core
   - SwiftIcons (2.0.1)
   - SwiftSoup (1.5.8)
 
 DEPENDENCIES:
-  - MobileCenter
-  - MobileCenter/MobileCenterDistribute
+  - AppCenter
+  - AppCenter/Distribute
   - SwiftIcons (~> 2.0.1)
   - SwiftSoup
 
 SPEC CHECKSUMS:
-  MobileCenter: 720e6c262ebdb90306e8824f6999ba6a0426343f
+  AppCenter: d0b68b2a7a87ac0aed78e66f36d87fd321d0a29c
   SwiftIcons: e475a56ae2c2da40672dbf16061ca5dd5cee7dbb
   SwiftSoup: 86a1f5ad07b7e3d14ab1a9324a58c75ae2215e79
 
-PODFILE CHECKSUM: 644e6ffb31258490eaba3207435296eb33361503
+PODFILE CHECKSUM: 440b8e34b5a6ff74fba01eb7c699554cf58b68eb
 
 COCOAPODS: 1.3.1
