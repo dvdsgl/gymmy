@@ -52,7 +52,7 @@ class ClassListViewController: UITableViewController {
     
     var sectionToWeekday = [Int]()
 
-    let testerUrl = URL(string: "https://install.mobile.azure.com/orgs/mobile-center/apps/gymmy")!
+    let testerUrl = URL(string: "https://install.mobile.azure.com/orgs/appcenter/apps/gymmy")!
     
     override func viewDidLoad() {
         super.viewDidLoad()
