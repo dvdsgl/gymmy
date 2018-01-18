@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftIcons
 
 class ClassTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!

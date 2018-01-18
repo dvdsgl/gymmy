@@ -15,21 +15,10 @@
 		63598CFD1EF0C12A00A090B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63598CFB1EF0C12A00A090B3 /* LaunchScreen.storyboard */; };
 		63763C4F1F15A19300B129B7 /* ClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63763C4E1F15A14E00B129B7 /* ClassDetailViewController.swift */; };
 		63763C501F15A19600B129B7 /* ClassListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63763C4D1F15A14E00B129B7 /* ClassListViewController.swift */; };
+		63BC84DA201120E5006D605C /* IconFonts in Resources */ = {isa = PBXBuildFile; fileRef = 63BC84D9201120E5006D605C /* IconFonts */; };
 		63C337E41EF4E72B006EC6C0 /* FitnessSF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C337E31EF4E72B006EC6C0 /* FitnessSF.swift */; };
 		63C337E71EF4E7D3006EC6C0 /* GymClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C337E61EF4E7D3006EC6C0 /* GymClass.swift */; };
 		63CA4AB31F14508D00D6D9D9 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA4AB21F14508D00D6D9D9 /* Persistence.swift */; };
-		63FC05C41F15ABAC00DA5A6A /* SwiftIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FC05C21F15ABA500DA5A6A /* SwiftIcons.swift */; };
-		63FC05C51F15ABD200DA5A6A /* Dripicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63FC05B81F15ABA500DA5A6A /* Dripicons.ttf */; };
-		63FC05C61F15ABD200DA5A6A /* Emoji.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63FC05B91F15ABA500DA5A6A /* Emoji.ttf */; };
-		63FC05C71F15ABD200DA5A6A /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63FC05BA1F15ABA500DA5A6A /* FontAwesome.ttf */; };
-		63FC05C81F15ABD200DA5A6A /* Icofont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63FC05BB1F15ABA500DA5A6A /* Icofont.ttf */; };
-		63FC05C91F15ABD200DA5A6A /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63FC05BC1F15ABA500DA5A6A /* Ionicons.ttf */; };
-		63FC05CA1F15ABD200DA5A6A /* Linearicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63FC05BD1F15ABA500DA5A6A /* Linearicons.ttf */; };
-		63FC05CB1F15ABD200DA5A6A /* MapIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63FC05BE1F15ABA500DA5A6A /* MapIcons.ttf */; };
-		63FC05CC1F15ABD200DA5A6A /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63FC05BF1F15ABA500DA5A6A /* MaterialIcons.ttf */; };
-		63FC05CD1F15ABD200DA5A6A /* OpenIconic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63FC05C01F15ABA500DA5A6A /* OpenIconic.ttf */; };
-		63FC05CE1F15ABD200DA5A6A /* Stateface.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63FC05C11F15ABA500DA5A6A /* Stateface.ttf */; };
-		63FC05CF1F15ABD200DA5A6A /* WeatherIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63FC05C31F15ABA500DA5A6A /* WeatherIcons.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,21 +32,10 @@
 		63598CFE1EF0C12A00A090B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63763C4D1F15A14E00B129B7 /* ClassListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClassListViewController.swift; path = "View Controllers/ClassListViewController.swift"; sourceTree = "<group>"; };
 		63763C4E1F15A14E00B129B7 /* ClassDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClassDetailViewController.swift; path = "View Controllers/ClassDetailViewController.swift"; sourceTree = "<group>"; };
+		63BC84D9201120E5006D605C /* IconFonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IconFonts; sourceTree = "<group>"; };
 		63C337E31EF4E72B006EC6C0 /* FitnessSF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FitnessSF.swift; path = Chains/FitnessSF.swift; sourceTree = "<group>"; };
 		63C337E61EF4E7D3006EC6C0 /* GymClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymClass.swift; sourceTree = "<group>"; };
 		63CA4AB21F14508D00D6D9D9 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		63FC05B81F15ABA500DA5A6A /* Dripicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Dripicons.ttf; sourceTree = "<group>"; };
-		63FC05B91F15ABA500DA5A6A /* Emoji.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Emoji.ttf; sourceTree = "<group>"; };
-		63FC05BA1F15ABA500DA5A6A /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
-		63FC05BB1F15ABA500DA5A6A /* Icofont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Icofont.ttf; sourceTree = "<group>"; };
-		63FC05BC1F15ABA500DA5A6A /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
-		63FC05BD1F15ABA500DA5A6A /* Linearicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Linearicons.ttf; sourceTree = "<group>"; };
-		63FC05BE1F15ABA500DA5A6A /* MapIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MapIcons.ttf; sourceTree = "<group>"; };
-		63FC05BF1F15ABA500DA5A6A /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
-		63FC05C01F15ABA500DA5A6A /* OpenIconic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenIconic.ttf; sourceTree = "<group>"; };
-		63FC05C11F15ABA500DA5A6A /* Stateface.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Stateface.ttf; sourceTree = "<group>"; };
-		63FC05C21F15ABA500DA5A6A /* SwiftIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftIcons.swift; sourceTree = "<group>"; };
-		63FC05C31F15ABA500DA5A6A /* WeatherIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = WeatherIcons.ttf; sourceTree = "<group>"; };
 		6712E36E2141902296D29B51 /* Pods_gymmy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gymmy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F43D7972DA7D9A92ADEDCA2 /* Pods-gymmy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gymmy.release.xcconfig"; path = "Pods/Target Support Files/Pods-gymmy/Pods-gymmy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,7 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				63598CF11EF0C12A00A090B3 /* gymmy */,
-				63FC05B71F15ABA500DA5A6A /* SwiftIcons */,
 				63598CF01EF0C12A00A090B3 /* Products */,
 				A06FAE0D234F78B4F4A4382B /* Pods */,
 				1AC4035D661E57F191551727 /* Frameworks */,
@@ -104,6 +81,7 @@
 		63598CF11EF0C12A00A090B3 /* gymmy */ = {
 			isa = PBXGroup;
 			children = (
+				63BC84D9201120E5006D605C /* IconFonts */,
 				63598CF21EF0C12A00A090B3 /* AppDelegate.swift */,
 				63763C4C1F15A0B700B129B7 /* Models */,
 				63C337E51EF4E734006EC6C0 /* Chains */,
@@ -151,25 +129,6 @@
 			name = Chains;
 			sourceTree = "<group>";
 		};
-		63FC05B71F15ABA500DA5A6A /* SwiftIcons */ = {
-			isa = PBXGroup;
-			children = (
-				63FC05C21F15ABA500DA5A6A /* SwiftIcons.swift */,
-				63FC05B81F15ABA500DA5A6A /* Dripicons.ttf */,
-				63FC05B91F15ABA500DA5A6A /* Emoji.ttf */,
-				63FC05BA1F15ABA500DA5A6A /* FontAwesome.ttf */,
-				63FC05BB1F15ABA500DA5A6A /* Icofont.ttf */,
-				63FC05BC1F15ABA500DA5A6A /* Ionicons.ttf */,
-				63FC05BD1F15ABA500DA5A6A /* Linearicons.ttf */,
-				63FC05BE1F15ABA500DA5A6A /* MapIcons.ttf */,
-				63FC05BF1F15ABA500DA5A6A /* MaterialIcons.ttf */,
-				63FC05C01F15ABA500DA5A6A /* OpenIconic.ttf */,
-				63FC05C11F15ABA500DA5A6A /* Stateface.ttf */,
-				63FC05C31F15ABA500DA5A6A /* WeatherIcons.ttf */,
-			);
-			path = SwiftIcons;
-			sourceTree = "<group>";
-		};
 		A06FAE0D234F78B4F4A4382B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +174,7 @@
 					63598CEE1EF0C12A00A090B3 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = W9D824R4EW;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -242,17 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63FC05C51F15ABD200DA5A6A /* Dripicons.ttf in Resources */,
-				63FC05C61F15ABD200DA5A6A /* Emoji.ttf in Resources */,
-				63FC05C71F15ABD200DA5A6A /* FontAwesome.ttf in Resources */,
-				63FC05C81F15ABD200DA5A6A /* Icofont.ttf in Resources */,
-				63FC05C91F15ABD200DA5A6A /* Ionicons.ttf in Resources */,
-				63FC05CA1F15ABD200DA5A6A /* Linearicons.ttf in Resources */,
-				63FC05CB1F15ABD200DA5A6A /* MapIcons.ttf in Resources */,
-				63FC05CC1F15ABD200DA5A6A /* MaterialIcons.ttf in Resources */,
-				63FC05CD1F15ABD200DA5A6A /* OpenIconic.ttf in Resources */,
-				63FC05CE1F15ABD200DA5A6A /* Stateface.ttf in Resources */,
-				63FC05CF1F15ABD200DA5A6A /* WeatherIcons.ttf in Resources */,
+				63BC84DA201120E5006D605C /* IconFonts in Resources */,
 				63598CFD1EF0C12A00A090B3 /* LaunchScreen.storyboard in Resources */,
 				63598CFA1EF0C12A00A090B3 /* Assets.xcassets in Resources */,
 				63598CF81EF0C12A00A090B3 /* Main.storyboard in Resources */,
@@ -268,9 +218,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-gymmy/Pods-gymmy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftIcons/SwiftIcons.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftIcons.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -283,9 +238,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-gymmy/Pods-gymmy-resources.sh",
+				$PODS_CONFIGURATION_BUILD_DIR/MobileCenter/MobileCenterDistributeResources.bundle,
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -298,13 +256,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-gymmy-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -318,7 +279,6 @@
 				63C337E71EF4E7D3006EC6C0 /* GymClass.swift in Sources */,
 				63C337E41EF4E72B006EC6C0 /* FitnessSF.swift in Sources */,
 				63CA4AB31F14508D00D6D9D9 /* Persistence.swift in Sources */,
-				63FC05C41F15ABAC00DA5A6A /* SwiftIcons.swift in Sources */,
 				634814841F14378000862E87 /* ClassTableViewCell.swift in Sources */,
 				63763C4F1F15A19300B129B7 /* ClassDetailViewController.swift in Sources */,
 				63598CF31EF0C12A00A090B3 /* AppDelegate.swift in Sources */,
@@ -454,7 +414,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dvdsgl.gymmy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -468,7 +429,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dvdsgl.gymmy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

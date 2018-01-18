@@ -8,4 +8,5 @@ target 'gymmy' do
   pod 'MobileCenter/MobileCenterDistribute'
 
   pod "SwiftSoup"
+  pod 'SwiftIcons', '~> 2.0.1'
 end
