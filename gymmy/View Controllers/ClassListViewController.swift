@@ -67,14 +67,12 @@ class ClassListViewController: UITableViewController {
         classes = (try? FitnessSF.shared.getClasses()) ?? []
         studioFilter = Persistence.studioFilter
         
-        if #available(iOS 10.0, *) {
-            let refreshControl = UIRefreshControl()
-            refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-            refreshControl.addTarget(self,
-                                     action: #selector(refreshOptions(sender:)),
-                                     for: .valueChanged)
-            tableView.refreshControl = refreshControl
-        }
+        let refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self,
+                                 action: #selector(refreshOptions(sender:)),
+                                 for: .valueChanged)
+        tableView.refreshControl = refreshControl
         
         update()
     }
