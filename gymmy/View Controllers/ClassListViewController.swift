@@ -87,9 +87,13 @@ class ClassListViewController: UITableViewController {
         // Perform actions to refresh the content
         // ...
         // and then dismiss the control
-        classes = (try? FitnessSF.shared.getClasses(latest: true)) ?? []
-        update()
-        sender.endRefreshing()
+        DispatchQueue.global(qos: .background).async {
+            self.classes = (try? FitnessSF.shared.getClasses(latest: true)) ?? []
+            DispatchQueue.main.async {
+                self.update()
+                sender.endRefreshing()
+            }
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
