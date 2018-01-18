@@ -84,9 +84,7 @@ class ClassListViewController: UITableViewController {
     }
     
     @objc private func refreshOptions(sender: UIRefreshControl) {
-        // Perform actions to refresh the content
-        // ...
-        // and then dismiss the control
+        MSAnalytics.trackEvent("pull to refresh")
         DispatchQueue.global(qos: .background).async {
             do {
                 self.classes = try FitnessSF.shared.getClasses(latest: true)
@@ -153,7 +151,12 @@ class ClassListViewController: UITableViewController {
             let action = UIAlertAction(
                 title: studio,
                 style: .default,
-                handler: { _ in self.studioFilter = studio }
+                handler: { _ in
+                    MSAnalytics.trackEvent("filter studio", withProperties:[
+                        "studio": studio
+                    ])
+                    self.studioFilter = studio
+                }
             )
             alert.addAction(action)
         }
@@ -161,7 +164,12 @@ class ClassListViewController: UITableViewController {
         alert.addAction(UIAlertAction(
             title: "All Studios",
             style: .cancel,
-            handler: { _ in self.studioFilter = nil }
+            handler: { _ in
+                MSAnalytics.trackEvent("filter studio", withProperties:[
+                    "studio": "all"
+                ])
+                self.studioFilter = nil
+            }
         ))
         
         present(alert, animated: true)
@@ -170,6 +178,7 @@ class ClassListViewController: UITableViewController {
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         switch motion {
         case .motionShake:
+            MSAnalytics.trackEvent("shake")
             UIApplication.shared.open(testerUrl, options: [:])
         default:
             break
@@ -189,6 +198,12 @@ class ClassListViewController: UITableViewController {
                 let classes = classesByDay[weekday]!
                 detail.gymClass = classes[selection.row]
             }
+            
+            MSAnalytics.trackEvent("view class", withProperties:[
+                "name": detail.gymClass.name,
+                "studio": detail.gymClass.studio,
+                "trainer": detail.gymClass.trainer
+            ])
         default:
             break
         }
