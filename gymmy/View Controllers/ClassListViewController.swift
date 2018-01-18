@@ -103,7 +103,7 @@ class ClassListViewController: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         if classesByDay.isEmpty {
-            return 0;
+            return 0
         }
         return Calendar.current.weekdaySymbols.count
     }
