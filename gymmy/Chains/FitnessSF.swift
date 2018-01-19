@@ -15,6 +15,7 @@ class FitnessSF {
         guard times.count == 2 else { return nil }
         
         let f = DateFormatter()
+        f.locale = Locale(identifier: "en_US")
         f.dateFormat = "EEE h:mma"
         
         guard let start = f.date(from: "\(day) \(times[0])") else { return nil }
