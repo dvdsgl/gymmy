@@ -68,7 +68,6 @@ class ClassListViewController: UITableViewController {
         studioFilter = Persistence.studioFilter
         
         let refreshControl = UIRefreshControl()
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self,
                                  action: #selector(refreshOptions(sender:)),
                                  for: .valueChanged)
