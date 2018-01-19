@@ -89,13 +89,16 @@ class ClassListViewController: UITableViewController {
     
     func refreshAsync(completed: @escaping () -> Void) {
         DispatchQueue.global(qos: .background).async {
+            var classes: [GymClass]?
             do {
-                self.classes = try FitnessSF.shared.getClasses(latest: true)
+                classes = try FitnessSF.shared.getClasses(latest: true)
             } catch _ {
                 MSAnalytics.trackEvent("getClasses failed")
             }
             DispatchQueue.main.async {
-                self.update()
+                if let classes = classes {
+                    self.classes = classes
+                }
                 completed()
             }
         }
