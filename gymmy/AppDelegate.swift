@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             MSCrashes.self,
         ]
         
-        if debug {
+        if !debug {
             services.append(MSDistribute.self)
         }
         
